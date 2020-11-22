@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>StarWars Tinder</title>
+
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+
+    <!-- VUE.JS: -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<div id="app">
+    <p v-if="duda < 5 "> {{ title }}</p>
+    <p v-else> {{ dudaDodany_o100 }}</p>
+
+    <p> {{ duda }}</p>
+
+    <button v-on:click="sklonuj_dude"> sklonuj dude</button>
+    <button v-on:click="duda++"> powieksz dude sposob 2</button>
+    <button @click="duda--"> zmniejsz dude sposob 3</button>
+</div>
+
+
+
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+
+
+
+<script>
+
+    let app1 = new Vue({
+        el: '#app',
+        data: {
+            title: 'Hello Vue',
+            duda: 1
+        },
+        computed: {
+            dudaDodany_o100() {
+                return this.duda + 100;
+            }
+        },
+        watch: {
+            duda: function () {  // w skrócie mozna samo duda(){alert('lol')} , bez function
+                alert('Uptade');
+            }
+        },
+
+        methods: {
+            sklonuj_dude() {
+                this.duda *= 2
+            }
+        },
+    })
+
+    result = prompt('prompcik')
+    confirm(result)
+
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            message: 'You loaded this page on ' + new Date().toLocaleString()
+        }
+    })
+
+</script>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
