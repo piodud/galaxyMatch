@@ -24,7 +24,9 @@
     "vue-spinner": "^1.0.4",
     "vue-spinners-css": "^1.1.5",
     "vue-star": "0.0.4",
-    "vuetify": "^2.3.18"
+    "vuetify": "^2.3.18",
+    "express":"*",
+    "body-parser":"*",
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
